@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اسم شركتك هنا</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Tailwind CSS configuration
+      tailwind.config = {
+        darkMode: 'class', // Enable class-based dark mode
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: 'var(--color-primary-light)', // For lighter shades if needed
+                DEFAULT: 'var(--color-primary-default)',
+                dark: 'var(--color-primary-dark)', // For darker shades if needed
+                hover: 'var(--color-primary-hover)',
+                text: 'var(--color-primary-text)', // For text on primary background
+              },
+              secondary: {
+                light: 'var(--color-secondary-light)',
+                DEFAULT: 'var(--color-secondary-default)',
+                dark: 'var(--color-secondary-dark)',
+                hover: 'var(--color-secondary-hover)',
+                text: 'var(--color-secondary-text)',
+              },
+              accent: {
+                DEFAULT: 'var(--color-accent-default)',
+                hover: 'var(--color-accent-hover)',
+                text: 'var(--color-accent-text)',
+              },
+              background: 'var(--color-background)',
+              foreground: 'var(--color-foreground)',
+              card: 'var(--color-card)',
+              border: 'var(--color-border)',
+              muted: {
+                DEFAULT: 'var(--color-muted-default)',
+                foreground: 'var(--color-muted-foreground)',
+              }
+            },
+            fontFamily: {
+              sans: ['Cairo', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'], 
+              amiri: ['Amiri', 'serif'] // Added Amiri for PDF
+            },
+            boxShadow: {
+              'md-dark': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255,255,255,0.05)',
+              'lg-dark': '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05), 0 0 0 1px rgba(255,255,255,0.05)',
+              'xl-dark': '0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04), 0 0 0 1px rgba(255,255,255,0.05)',
+            }
+          },
+        },
+        plugins: [
+          function({ addBase, theme }) {
+            addBase({
+              ':root': {
+                '--color-primary-light': theme('colors.sky.400'),
+                '--color-primary-default': theme('colors.sky.600'),
+                '--color-primary-dark': theme('colors.sky.700'),
+                '--color-primary-hover': theme('colors.sky.700'),
+                '--color-primary-text': theme('colors.white'),
+
+                '--color-secondary-light': theme('colors.slate.200'),
+                '--color-secondary-default': theme('colors.slate.300'),
+                '--color-secondary-dark': theme('colors.slate.400'),
+                '--color-secondary-hover': theme('colors.slate.400'),
+                '--color-secondary-text': theme('colors.slate.800'),
+                
+                '--color-accent-default': theme('colors.teal.500'),
+                '--color-accent-hover': theme('colors.teal.600'),
+                '--color-accent-text': theme('colors.white'),
+
+                '--color-background': theme('colors.slate.100'),
+                '--color-foreground': theme('colors.slate.900'),
+                '--color-card': theme('colors.white'),
+                '--color-border': theme('colors.slate.300'),
+                '--color-muted-default': theme('colors.slate.200'),
+                '--color-muted-foreground': theme('colors.slate.500'),
+              },
+              '.dark': {
+                '--color-primary-light': theme('colors.sky.500'),
+                '--color-primary-default': theme('colors.sky.500'),
+                '--color-primary-dark': theme('colors.sky.600'),
+                '--color-primary-hover': theme('colors.sky.600'),
+                '--color-primary-text': theme('colors.white'),
+
+                '--color-secondary-light': theme('colors.slate.700'),
+                '--color-secondary-default': theme('colors.slate.600'),
+                '--color-secondary-dark': theme('colors.slate.500'),
+                '--color-secondary-hover': theme('colors.slate.500'),
+                '--color-secondary-text': theme('colors.slate.100'),
+
+                '--color-accent-default': theme('colors.teal.400'),
+                '--color-accent-hover': theme('colors.teal.500'),
+                '--color-accent-text': theme('colors.slate.900'),
+
+                '--color-background': theme('colors.slate.900'),
+                '--color-foreground': theme('colors.slate.50'),
+                '--color-card': theme('colors.slate.800'),
+                '--color-border': theme('colors.slate.700'),
+                '--color-muted-default': theme('colors.slate.800'),
+                '--color-muted-foreground': theme('colors.slate.400'),
+              }
+            });
+          }
+        ]
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Custom scrollbar styles */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-background);
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: var(--color-secondary-default);
+        border-radius: 10px;
+        border: 2px solid var(--color-background);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-secondary-dark);
+      }
+      /* Ensure body takes on background colors correctly */
+      body {
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+        font-family: 'Cairo', sans-serif;
+      }
+      /* Improve focus rings for accessibility */
+      *:focus-visible {
+        outline: 2px solid var(--color-primary-default) !important;
+        outline-offset: 2px !important;
+        box-shadow: 0 0 0 4px var(--color-primary-light) !important;
+      }
+      .dark *:focus-visible {
+        outline: 2px solid var(--color-primary-light) !important;
+        box-shadow: 0 0 0 4px var(--color-primary-default) !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "recharts": "https://esm.sh/recharts@^2.15.3",
+    "jspdf": "https://esm.sh/jspdf@^3.0.1",
+    "jspdf-autotable": "https://esm.sh/jspdf-autotable@^5.0.2",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.513.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
